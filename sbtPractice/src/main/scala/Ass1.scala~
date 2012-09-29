@@ -1,0 +1,62 @@
+/*
+ * Author: Qi Wang
+ * Assignment1
+ * 
+ * Number is stored in List[].
+ * 78 would be represented as List(7,8)
+ */
+package Ass1
+import scala.collection.immutable.List
+
+object Ass1 extends App {
+  /*
+   * Example: 
+   * 
+   * prependCarryRemainder(4, 9, List(0)) will return List(1, 3)
+   * 
+   * prependCarryRemainder(4, 9, List(2, 5)) will return List(1, 3, 2, 5)
+   */
+  def prependCarryRemainder(x: Int, y: Int, result: List[Int]): List[Int] =  (x / y)::(x % y) :: result.tail
+  
+  def add(num1: List[Int], num2: List[Int], base: Int = 10): List[Int] = {
+    var result = List(0)
+    val numList = List(num1, num2) sortWith ((x, y) => x.length < y.length) // sort two lists from smaller length to bigger length
+    val numWith0 = numList(0).reverse.padTo(numList(1).length, 0) // prepend shorter list with 0 to the same length as longer list
+
+    (numList(1).length - 1 to 0 by -1) foreach (i => result = prependCarryRemainder(numList(1)(i) + numWith0(numList(1).length-1-i) + result.head, base, result)) // add each digit
+
+    if (result.head == 0) result.tail else result
+  }
+
+  def mul(num1: List[Int], num2: List[Int], base: Int = 10): List[Int] = {
+    var result = List(0)
+    
+    (num1.length - 1 to 0 by -1) foreach { i =>
+      var mResult = List(0)
+      num2.reverseMap (j => mResult = prependCarryRemainder(num1(i) * j + mResult.head, base, mResult)) //multiply each digit
+      mResult = mResult.padTo(mResult.length + num1.length - i - 1, 0) // append 0 to partial result, which is the same as multiply base**n
+      result = add(mResult, result, base)
+    }
+
+    if (result.head == 0) result.tail else result
+  }
+
+  /*
+   * Purpose of this implicit conversion function is when I provide add() and mul() with Int type, it'll be converted to List[] automatically
+   * This only works when base is less than 10
+   */
+  implicit def intToList(x: Int) = {
+    var listX = List[Int]()
+    x.toString.foreach (i =>listX = listX :+ Integer.parseInt(i.toString, 10))  
+    listX
+  }
+
+//    println("add (base 10): " + add(1234, 23, 10)) //439
+  //  println("add (base 10): " + add(23, 1234, 10)) //439
+  //  println("add (base 10): " + add(345, 942, 10)) //1287
+  //  println("add (base 8): " + add(531, 1656, 8)) //2407
+  //  println("add (base 2): " + add(101011001, 1110101110, 2)) //10100000111
+  //  println("add (base 16): " + add(345, 942, 16)) //12(c), 8, 7
+  //  println("mulNumDigit (base 10): " + mulNumDigit(83, 5, 10)) //415
+//  println("mul (base 10): " + mul(List(8, 3, 6, 7, 7), List(8, 3, 6), 10)) //69953972
+}
