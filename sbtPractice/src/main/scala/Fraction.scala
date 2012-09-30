@@ -14,11 +14,6 @@ class Fraction(val n: Int, val d: Int) {
 
   def this(n: Int) = this(n, 1)
 
-  /**
-   * [[]]
-   * @param r Fraction
-   * @return Unit
-   */
   def +(r:Fraction) = {
     Fraction(n*r.d+r.n*d,d*r.d).simplify
   }

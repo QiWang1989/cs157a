@@ -11,8 +11,9 @@
 object Ass1 extends App {
   import  ImplicitConversion._
 
-    println(Fraction(3,2)+Fraction(4,6))
+//    println(Fraction(3,2)+Fraction(4,6))
 
+  println(List(7, 8, 9) / List(9))
 //  println(divOneDigit(List(1, 3, 5), 4))
 //  println("add and mul: "+add(mul(101,101,2).get,100,2).get)
 //    println("longDiv (base 2): " + IntOperation.longDiv(11101, 101, 2).get) //101...100
