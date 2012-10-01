@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7814ffee-ca3d-499e-9a9b-7a26aebdec4b" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scala/IntOperation.scala" afterPath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Ass1.scala" afterPath="$PROJECT_DIR$/src/main/scala/Ass1.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Fraction.scala" afterPath="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" afterPath="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" afterPath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/FractionTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
     </list>
     <ignored path="sbtPractice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,8 +83,10 @@
       <file leaf-file-name="Ass1.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Ass1.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="33" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="8" column="32" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +94,7 @@
       <file leaf-file-name="Fraction.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Fraction.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="35" selection-start="726" selection-end="726" vertical-scroll-proportion="0.770291">
+            <state line="20" column="68" selection-start="403" selection-end="403" vertical-scroll-proportion="0.45941806">
               <folding />
             </state>
           </provider>
@@ -103,7 +103,7 @@
       <file leaf-file-name="PositionalNumInt.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="66" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0">
+            <state line="133" column="56" selection-start="4775" selection-end="4775" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,7 @@
       <file leaf-file-name="ImplicitConversion.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="56" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+            <state line="5" column="4" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +121,7 @@
       <file leaf-file-name="IntOperationTest.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/IntOperationTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="70" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.0">
+            <state line="155" column="6" selection-start="5698" selection-end="5698" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,8 +130,10 @@
       <file leaf-file-name="FractionTest.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/FractionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="21" column="100" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#155#183#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,14 +163,14 @@
         <option value="$PROJECT_DIR$/src/test/scala/Ass1Test.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/FractionOp.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Rational.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/IntOperation.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/PositionNum.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Ass1.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
       </list>
     </option>
   </component>
@@ -373,7 +375,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="ScalaTest.IntOperationTest">
+  <component name="RunManager" selected="ScalaTest.FractionTest">
     <configuration default="false" name="Ass1Test" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -404,7 +406,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="default-cbfbc5" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -421,7 +429,13 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -754,44 +768,55 @@
         <state line="50" column="0" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.7329377" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Ass1.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.9.1-sources.jar!/scala/collection/generic/Growable.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="33" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/FractionTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="66" selection-start="4100" selection-end="4100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="56" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+        <state line="47" column="0" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.6839546">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/IntOperationTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="70" selection-start="3296" selection-end="3296" vertical-scroll-proportion="0.0">
+        <state line="155" column="6" selection-start="5698" selection-end="5698" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Ass1.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/FractionTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="100" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#155#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="56" selection-start="4775" selection-end="4775" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="4" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Fraction.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="35" selection-start="726" selection-end="726" vertical-scroll-proportion="0.770291">
+        <state line="20" column="68" selection-start="403" selection-end="403" vertical-scroll-proportion="0.45941806">
           <folding />
         </state>
       </provider>

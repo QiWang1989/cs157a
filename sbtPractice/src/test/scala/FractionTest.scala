@@ -14,25 +14,25 @@ class FractionTest extends FunSpec{
 
   describe("Fraction + Fraction: ") {
     it("should add two fractions and simplify the result"){
-      assert(Fraction(3,2)+Fraction(4,6) equal Fraction(13,6))
+      assert(Fraction(PN(3),PN(2))+Fraction(PN(4),PN(6)) equals Fraction(13,6))
     }
   }
 
   describe("Fraction - Fraction: ") {
     it("should subtract two fractions and simplify the result"){
-      assert(Fraction(3,2)-Fraction(4,6) equal  Fraction(5,6))
+      assert(Fraction(PN(3),PN(2))-Fraction(PN(4),PN(6)) equals  Fraction(PN(5),PN(6)))
     }
   }
 
   describe("Fraction * Fraction: ") {
     it("should multiply two fractions and simplify the result"){
-      assert(Fraction(3,2)*Fraction(4,6) equal Fraction(1,1))
+      assert(Fraction(PN(3),PN(2))*Fraction(PN(4),PN(6)) equals Fraction(PN(1),PN(1)))
     }
   }
 
   describe("Fraction / Fraction: ") {
     it("should divide two fractions and simplify the result"){
-      assert(Fraction(3,2)/Fraction(4,6) equal Fraction(9,4))
+      assert(Fraction(PN(3),PN(2))/Fraction(PN(4),PN(6)) equals Fraction(PN(9),PN(4)))
     }
   }
 }

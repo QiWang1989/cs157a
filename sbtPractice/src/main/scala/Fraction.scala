@@ -5,21 +5,21 @@ import annotation.tailrec
  * User: qiwang
  * Date: 9/25/12
  * Time: 6:32 PM
- * To change this template use File | Settings | File Templates.
+ * Fraction operations for positional number system
  */
-class Fraction(val n: Int, val d: Int) {
-  require(d != 0)
+class Fraction(val n: PN, val d: PN) {
+  import ImplicitConversion._
 
-  override def toString = n + "/" + d
+  require(!(d equals PN(0)))
 
-  def this(n: Int) = this(n, 1)
+  def this(n: PN) = this(n, PN(List(1)))
 
   def +(r:Fraction) = {
     Fraction(n*r.d+r.n*d,d*r.d).simplify
   }
 
   def -(r:Fraction) = {
-    Fraction(n*r.d-r.n*d,d*r.d).simplify
+    Fraction((n*r.d-r.n*d)._1,d*r.d).simplify
   }
 
   def *(r:Fraction) = {
@@ -30,22 +30,24 @@ class Fraction(val n: Int, val d: Int) {
     Fraction(n*r.d,d*r.n).simplify
   }
 
-  def equal(f:Fraction):Boolean = (n == f.n && d == f.d)
+  def equals(f:Fraction):Boolean = ((n equals f.n) && (d equals f.d))
 
   private def simplify:Fraction = {
     val g = gcd(n,d)
-    new Fraction(n/g, d/g)
+    new Fraction((n/g)._1, (d/g)._1)
   }
 
   @tailrec
-  private def gcd(x:Int, y:Int):Int = if (y==0) x else gcd(y, x%y)
+  private def gcd(x:PN, y:PN):PN = if (y equals PN(0)) x else gcd(y, (x/y)._2)
+
+  override def toString = n + "/" + d
 }
 
 
 object Fraction{
-  def apply(n:Int) = new Fraction(n)
+  def apply(n:PN) = new Fraction(n)
 
-  def apply(n: Int, d: Int)={
+  def apply(n: PN, d: PN)={
     new Fraction(n, d).simplify
   }
 }
