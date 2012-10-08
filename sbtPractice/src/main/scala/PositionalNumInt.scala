@@ -12,7 +12,7 @@ class PN(val pn:List[Int]) {
    * Supports both mixed base system and fixed base system
    */
   def +(num2: PN, base: Any = 10): PN = {
-    def helper(bb: List[Int]) = {
+    def addRoutinehelper(bb: List[Int]) = {
       var result = List(0)
       // sort two lists from smaller length to bigger length
       val numList = List(pn, num2.pn) sortWith ((x, y) => x.length < y.length)
@@ -26,8 +26,8 @@ class PN(val pn:List[Int]) {
     }
 
     base match {
-      case b: Int => helper(List(b)) //fixed base system
-      case b: List[Int] => helper(b) //mixed base system
+      case b: Int => addRoutinehelper(List(b)) //fixed base system
+      case b: List[Int] => addRoutinehelper(b) //mixed base system
     }
   }
 
@@ -35,7 +35,7 @@ class PN(val pn:List[Int]) {
    * Supports both mixed base system and fixed base system
    */
   def -(num2: PN, base: Any = 10): (PN, Boolean) = {
-    def helper(bb: List[Int]) = {
+    def subRoutineHelper(bb: List[Int]) = {
       val extendedBase = prependList(bb, pn.length, bb.head)
       val extendedNum2 = prependList(num2.pn, pn.length, 0)
       val complement = calComplement(extendedNum2, extendedBase)
@@ -44,8 +44,8 @@ class PN(val pn:List[Int]) {
     }
 
     base match {
-      case b: Int => helper(List(b)) //fixed base system
-      case b: List[Int] => helper(b) //mixed base system
+      case b: Int => subRoutineHelper(List(b)) //fixed base system
+      case b: List[Int] => subRoutineHelper(b) //mixed base system
     }
   }
 

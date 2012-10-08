@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7814ffee-ca3d-499e-9a9b-7a26aebdec4b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" afterPath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
     </list>
     <ignored path="sbtPractice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,7 +112,7 @@
       <file leaf-file-name="PositionalNumInt.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="29" selection-start="1990" selection-end="1990" vertical-scroll-proportion="-0.8549618">
+            <state line="47" column="43" selection-start="1836" selection-end="1836" vertical-scroll-proportion="-0.022900764">
               <folding />
             </state>
           </provider>
@@ -822,7 +819,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="29" selection-start="1990" selection-end="1990" vertical-scroll-proportion="-0.8549618">
+        <state line="47" column="43" selection-start="1836" selection-end="1836" vertical-scroll-proportion="-0.022900764">
           <folding />
         </state>
       </provider>
