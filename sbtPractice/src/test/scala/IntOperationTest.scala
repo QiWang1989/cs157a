@@ -22,6 +22,7 @@ class IntOperationTest extends FunSpec {
     it("should add two lists with arbitraty length correctly for base 8") {
       val num1 = List(2,3,2,2)
       val num2 = List(2,7)
+      val result = num1+(num2,8)
       assert(num1 + (num2, 8) equals PN(List(2, 3, 5, 1)))
       assert(num2 + (num1, 8) equals PN(List(2, 3, 5, 1)))
     }

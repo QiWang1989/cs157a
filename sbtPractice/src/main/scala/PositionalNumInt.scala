@@ -14,10 +14,14 @@ class PN(val pn:List[Int]) {
   def +(num2: PN, base: Any = 10): PN = {
     def helper(bb: List[Int]) = {
       var result = List(0)
-      val numList = List(pn, num2.pn) sortWith ((x, y) => x.length < y.length) // sort two lists from smaller length to bigger length
-      val numWith0 = prependList(numList(0), numList(1).length, 0) // prepend shorter list with 0 to the same length as longer list
+      // sort two lists from smaller length to bigger length
+      val numList = List(pn, num2.pn) sortWith ((x, y) => x.length < y.length)
+      // prepend shorter list with 0 to the same length as longer list
+      val numWith0 = prependList(numList(0), numList(1).length, 0)
       val extendedBase = prependList(bb, numWith0.length, bb.head)
-      numWith0.indices.reverse foreach (i => result = prependCarryRemainder(numList(1)(i) + numWith0(i) + result.head, extendedBase(i), result)) // add each digit
+      // add each digit
+      numWith0.indices.reverse foreach (i => result = prependCarryRemainder(numList(1)(i) + numWith0(i) + result.head, extendedBase(i), result))
+
       if (result.head == 0) result.tail else result
     }
 
@@ -51,8 +55,10 @@ class PN(val pn:List[Int]) {
     (pn.length - 1 to 0 by -1) foreach {
       i =>
         var mResult = List(0)
-        num2.pn.reverseMap(j => mResult = prependCarryRemainder(pn(i) * j + mResult.head, base, mResult)) //multiply each digit
-        mResult = mResult.padTo(mResult.length + pn.length - i - 1, 0) // append 0 to partial result, which is the same as multiply base**n
+        //multiply each digit
+        num2.pn.reverseMap(j => mResult = prependCarryRemainder(pn(i) * j + mResult.head, base, mResult))
+        // append 0 to partial result, which is the same as multiply base**n
+        mResult = mResult.padTo(mResult.length + pn.length - i - 1, 0)
         result = (mResult + (result, base)).pn
     }
     if (result.head == 0) result.tail else result
