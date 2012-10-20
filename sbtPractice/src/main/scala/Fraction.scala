@@ -10,7 +10,7 @@ import annotation.tailrec
 class Fraction(val n: PN, val d: PN) {
   import ImplicitConversion._
 
-  require(!(d equals PN(0)))
+  require(!(d equals 0))
 
   def this(n: PN) = this(n, PN(List(1)))
 
@@ -38,7 +38,7 @@ class Fraction(val n: PN, val d: PN) {
   }
 
   @tailrec
-  private def gcd(x:PN, y:PN):PN = if (y equals PN(0)) x else gcd(y, (x/y)._2)
+  private def gcd(x:PN, y:PN):PN = if (y equals PN(List(0))) x else gcd(y, (x/y)._2)
 
   override def toString = n + "/" + d
 }
@@ -48,6 +48,7 @@ object Fraction{
   def apply(n:PN) = new Fraction(n)
 
   def apply(n: PN, d: PN)={
-    new Fraction(n, d).simplify
+    val r = new Fraction(n, d).simplify
+    r
   }
 }

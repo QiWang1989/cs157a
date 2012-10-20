@@ -131,6 +131,13 @@ class IntOperationTest extends FunSpec {
 
 
   describe("Integer longDiv function"){
+    it("should return (1,remainder) when quotient is 1"){
+      val num1 = List(1, 9, 8)
+      val num2 = List(1, 9, 5)
+      assert((num1 / (num2, 10))._1 equals PN( List(1)) )
+      assert((num1 / (num2, 10))._2 equals PN( List(3)))
+    }
+
     it("should divide two lists for base 2"){
       val num1 = List(1, 1, 1, 0, 1)
       val num2 = List(1, 0, 1)
@@ -154,5 +161,21 @@ class IntOperationTest extends FunSpec {
       assert((num1 / (num2, 10))._2 equals PN( List(5)))
       assert(((num2 * (List(8), 10)) + List(5)) equals PN( List(7,8,9)))
     }
+
+    it("should return (0, 0) if divisee is 0"){
+      val num1 = List(0)
+      val num2 = List(9, 8)
+      assert((num1 / (num2, 10))._1 equals PN( List(0)) )
+      assert((num1 / (num2, 10))._2 equals PN( List(0)))
+    }
+
+    it("should return (0, divisee) if divisee is less than divisor"){
+      val num1 = List(7, 8)
+      val num2 = List(9, 8)
+      assert((num1 / (num2, 10))._1 equals PN( List(0)) )
+      assert((num1 / (num2, 10))._2 equals PN( List(7,8)))
+    }
+
+
   }
 }

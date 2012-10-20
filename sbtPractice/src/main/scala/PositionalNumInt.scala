@@ -5,7 +5,7 @@
  * Time: 5:55 PM
  * Basic numeric operations for positional number system
  */
-class PN(val pn:List[Int]) {
+class PN(val pn:List[Int]) extends Ordered[PN]{
   import ImplicitConversion._
 
   /**
@@ -66,6 +66,11 @@ class PN(val pn:List[Int]) {
 
 
   def /(num2: PN, b: Int = 10): (PN, PN) = {
+    require(!(num2 equals PN(List(0))))
+
+    // if num2 is less than num1, than just result is (0, this)
+    if (this<num2) return (PN(List(0)),this)
+
     // if num2 only has one digit, simpler division algorithm should be used.
     val n = num2.pn.length
     if (n < 2) return divOneDigit(pn, num2.pn(0), b)
@@ -78,8 +83,11 @@ class PN(val pn:List[Int]) {
     var q = List[Int]()
     val m = u.length - n
 
+    if(m == 0) return (PN(List(1)), trim((this - num2)._1))
+
     (0 until m ) foreach {
       j =>
+        j
       // D3. Calculate q_hat
         if (u(j) == v(0)) q_hat = b - 1 else q_hat = (u(j) * b + u(j + 1)) / v(0)
 
@@ -100,6 +108,11 @@ class PN(val pn:List[Int]) {
     val u_rest = u.slice(m, u.length)
     if (q.head == 0) (q.tail, divOneDigit(u_rest, d, b)._1) else (q, divOneDigit(u_rest, d, b)._1)
   }
+
+  /**
+   *  drop 0s at the beginning of the number
+   */
+  def trim(x:PN):PN = x.pn dropWhile(_== 0)
 
   /**
    * save carry as head of result list, and tail is a list of remainder
@@ -140,6 +153,15 @@ class PN(val pn:List[Int]) {
     if (pn.length != num2.pn.length) return false
     (0 until pn.length) foreach { i=> if (pn(i) != num2.pn(i)) return false}
     true
+  }
+
+  override def compare(that: PN)= {
+    var result = 1
+    if(this.equals(that)) result = 0
+    if (this.length<that.length) result = -1
+    else if (this.length == that.length && this.pn(0)<that.pn(0))
+      result = -1
+    result
   }
 }
 
