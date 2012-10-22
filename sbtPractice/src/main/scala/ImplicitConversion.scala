@@ -6,16 +6,12 @@
  * Compiler will use these implicit conversions to convert parameters into proper types
  */
 object ImplicitConversion {
-  implicit def intToPN(x: Int):PN = {
-    var listX = List[Int]()
-    x.toString foreach (i => listX = listX :+ Integer.parseInt(i.toString, 10))
-    PN(listX)
-  }
+  implicit def intToPN(x: Int):PN = PN(intToList(x))
 
   implicit def intToList(x: Int):List[Int] = {
-    var listX = List[Int]()
-    x.toString foreach (i => listX = listX :+ Integer.parseInt(i.toString, 10))
-    listX
+    val listX = x.toString toList
+
+    for (i <- listX) yield i.toString.toInt
   }
 
   implicit def listToPN(x: List[Int]):PN = PN(x)

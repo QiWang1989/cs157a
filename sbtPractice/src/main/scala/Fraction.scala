@@ -38,7 +38,9 @@ class Fraction(val n: PN, val d: PN) {
   }
 
   @tailrec
-  private def gcd(x:PN, y:PN):PN = if (y equals PN(List(0))) x else gcd(y, (x/y)._2)
+  private def gcd(x:PN, y:PN):PN = {
+    if (y equals PN(List(0))) x else gcd(y, (x/y)._2)
+  }
 
   override def toString = n + "/" + d
 }

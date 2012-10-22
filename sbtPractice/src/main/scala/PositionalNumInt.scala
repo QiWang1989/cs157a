@@ -20,7 +20,9 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
       val numWith0 = prependList(numList(0), numList(1).length, 0)
       val extendedBase = prependList(bb, numWith0.length, bb.head)
       // add each digit
-      numWith0.indices.reverse foreach (i => result = prependCarryRemainder(numList(1)(i) + numWith0(i) + result.head, extendedBase(i), result))
+      numWith0.indices.reverse foreach {i =>
+        result = prependCarryRemainder(numList(1)(i) + numWith0(i) + result.head, extendedBase(i), result)
+      }
 
       if (result.head == 0) result.tail else result
     }
@@ -40,7 +42,10 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
       val extendedNum2 = prependList(num2.pn, pn.length, 0)
       val complement = calComplement(extendedNum2, extendedBase)
       val partialResult = ((this + (1, base)) + (complement, base)).pn  // add complement with num1
-      if (partialResult.length == extendedBase.length + 1) (PN(partialResult.tail), true) else (PN(partialResult), false)
+      if (partialResult.length == extendedBase.length + 1)
+        (PN(partialResult.tail), true)
+      else
+        (PN(partialResult), false)
     }
 
     base match {
@@ -56,7 +61,9 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
       i =>
         var mResult = List(0)
         //multiply each digit
-        num2.pn.reverseMap(j => mResult = prependCarryRemainder(pn(i) * j + mResult.head, base, mResult))
+        num2.pn.reverseMap(j =>
+           mResult = prependCarryRemainder(pn(i) * j + mResult.head, base, mResult)
+        )
         // append 0 to partial result, which is the same as multiply base**n
         mResult = mResult.padTo(mResult.length + pn.length - i - 1, 0)
         result = (mResult + (result, base)).pn
@@ -117,12 +124,16 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
   /**
    * save carry as head of result list, and tail is a list of remainder
    */
-  def prependCarryRemainder(x: Int, base: Int, result: List[Int]): List[Int] = (x / base) :: (x % base) :: result.tail
+  def prependCarryRemainder(x: Int, base: Int, result: List[Int]): List[Int] = {
+    (x / base) :: (x % base) :: result.tail
+  }
 
   /**
    * save remainder as head of result list, and tail is quotient
    */
-  def prependRemainderAppendQuotient(x: Int, v: Int, result: List[Int]): List[Int] = ((x % v) :: result.tail) :+ (x / v)
+  def prependRemainderAppendQuotient(x: Int, v: Int, result: List[Int]): List[Int] = {
+    ((x % v) :: result.tail) :+ (x / v)
+  }
 
   /**
    * division routine when v only has one digit
@@ -145,7 +156,9 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
     result
   }
 
-  def prependList(ls: List[Int], length: Int, padding: Int): List[Int] = List.fill(length - ls.length)(padding) ::: ls
+  def prependList(ls: List[Int], length: Int, padding: Int): List[Int] = {
+    List.fill(length - ls.length)(padding) ::: ls
+  }
 
   override def toString = pn.toString()
 
