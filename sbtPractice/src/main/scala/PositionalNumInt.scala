@@ -8,6 +8,7 @@
 class PN(val pn:List[Int]) extends Ordered[PN]{
   import ImplicitConversion._
 
+  def +(num2: PN): PN = this.+(num2, 10)
   /**
    * Supports both mixed base system and fixed base system
    */
@@ -33,10 +34,13 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
     }
   }
 
+  def -(num2: PN): PN = this.-(num2, 10)
+  def -(num2: PN, base: Any = 10): PN = subtractWithSign(num2, base)._1
+
   /**
    * Supports both mixed base system and fixed base system
    */
-  def -(num2: PN, base: Any = 10): (PN, Boolean) = {
+  def subtractWithSign(num2: PN, base: Any = 10): (PN, Boolean) = {
     def subRoutineHelper(bb: List[Int]) = {
       val extendedBase = prependList(bb, pn.length, bb.head)
       val extendedNum2 = prependList(num2.pn, pn.length, 0)
@@ -54,6 +58,7 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
     }
   }
 
+  def *(num2: PN): PN = this.*(num2, 10)
   def *(num2: PN, base: Int = 10): PN = {
     var result = List(0)
 
@@ -71,8 +76,12 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
     if (result.head == 0) result.tail else result
   }
 
+  def /(num2: PN): PN = this./(num2, 10)
+  def /(num2: PN, b: Int = 10): PN = divMod(num2, b)._1
+  def %(num2: PN): PN = this.%(num2, 10)
+  def %(num2: PN, b: Int = 10): PN = divMod(num2, b)._2
 
-  def /(num2: PN, b: Int = 10): (PN, PN) = {
+  def divMod(num2: PN, b: Int = 10): (PN, PN) = {
     require(!(num2 equals PN(List(0))))
 
     // if num2 is less than num1, than just result is (0, this)
@@ -90,7 +99,7 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
     var q = List[Int]()
     val m = u.length - n
 
-    if(m == 0) return (PN(List(1)), trim((this - num2)._1))
+    if(m == 0) return (PN(List(1)), trim(this - num2))
 
     (0 until m ) foreach {
       j =>
@@ -101,7 +110,7 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
         while (v(1) * q_hat > ((u(j) * b + u(j + 1) - q_hat * v(0)) * b + u(j + 2))) q_hat = q_hat - 1
 
         //D4. Multiply and subtract
-        val subResult = PN(u.slice(j, j + n+1)) - (PN(List(q_hat)) * (v, b), b)
+        val subResult = PN(u.slice(j, j + n+1)).subtractWithSign(PN(List(q_hat)) * (v, b), b)
         var u_ = subResult._1
 
         if (!subResult._2) {                 // if negative
@@ -112,6 +121,7 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
         }
         u = u.patch(j, u_, n+1)
     }
+
     val u_rest = u.slice(m, u.length)
     if (q.head == 0) (q.tail, divOneDigit(u_rest, d, b)._1) else (q, divOneDigit(u_rest, d, b)._1)
   }

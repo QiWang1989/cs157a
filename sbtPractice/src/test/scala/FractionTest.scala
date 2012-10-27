@@ -11,7 +11,7 @@ import org.scalatest.Tag
 
 @org.junit.runner.RunWith(classOf[JUnitRunner])
 class FractionTest extends FunSpec{
-  import  ImplicitConversion._
+  import  ImplicitConversion.intToList
 
   describe("Fraction[PN]:") {
     it("should add two fractions of type PN and simplify the result"){
