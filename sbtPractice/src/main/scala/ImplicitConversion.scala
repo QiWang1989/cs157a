@@ -17,4 +17,6 @@ object ImplicitConversion {
   implicit def listToPN(x: List[Int]):PN = PN(x)
 
   implicit def pnToList(x: PN):List[Int] = x.pn
+
+  implicit def intToIntWrapper(x:Int) = new IntWrapper(x)
 }

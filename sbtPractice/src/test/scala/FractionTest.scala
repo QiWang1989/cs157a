@@ -11,9 +11,9 @@ import org.scalatest.Tag
 
 @org.junit.runner.RunWith(classOf[JUnitRunner])
 class FractionTest extends FunSpec{
-  import  ImplicitConversion.intToList
-
   describe("Fraction[PN]:") {
+    import  ImplicitConversion.intToList
+
     it("should add two fractions of type PN and simplify the result"){
       assert(Fraction(PN(3),PN(2))+Fraction(PN(4),PN(6)) equals Fraction(PN(13),PN(6)))
     }
@@ -33,23 +33,28 @@ class FractionTest extends FunSpec{
 
   describe("Fraction[Int]:") {
     it("should add big two fractions of type Int and simplify the result", Tag("IntBigAdd")){
-      assert(Fraction(123, 456) + Fraction(789, 987) equals Fraction(53465, 50008))
+      assert(Fraction(IntWrapper(123), IntWrapper(456)) + Fraction(IntWrapper(789),
+        IntWrapper(987)) equals Fraction(IntWrapper(53465), IntWrapper(50008)))
     }
 
     it("should add two fractions of type Int and simplify the result", Tag("IntAdd")){
-      assert(Fraction(3, 2) + Fraction(4, 6) equals Fraction(13, 6))
+      assert(Fraction(IntWrapper(3), IntWrapper(2)) + Fraction(IntWrapper(4),
+        IntWrapper(6)) equals Fraction(IntWrapper(13), IntWrapper(6)))
     }
 
     it("should subtract two fractions of type Int and simplify the result"){
-      assert(Fraction(3,2)-Fraction(4,6) equals  Fraction(5,6))
+      assert(Fraction(IntWrapper(3),IntWrapper(2))-
+        Fraction(IntWrapper(4),IntWrapper(6)) equals  Fraction(IntWrapper(5),IntWrapper(6)))
     }
 
     it("should multiply two fractions of type Int and simplify the result"){
-      assert(Fraction(3,2)*Fraction(4,6) equals Fraction(1,1))
+      assert(Fraction(IntWrapper(3),IntWrapper(2))*
+        Fraction(IntWrapper(4),IntWrapper(6)) equals Fraction(IntWrapper(1),IntWrapper(1)))
     }
 
     it("should divide two fractions of type Int and simplify the result"){
-      assert(Fraction(3,2)/Fraction(4,6) equals Fraction(9,4))
+      assert(Fraction(IntWrapper(3),IntWrapper(2))/
+        Fraction(IntWrapper(4),IntWrapper(6)) equals Fraction(IntWrapper(9),IntWrapper(4)))
     }
   }
 }

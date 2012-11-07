@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7814ffee-ca3d-499e-9a9b-7a26aebdec4b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/Arithmetic.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/IntWrapper.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_10_test.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_10_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_core_1_1_test.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_hamcrest_hamcrest_core_1_1_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_scala_lang_scala_library_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_scala_lang_scala_library_2_9_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_scalatest_scalatest_2_9_1_2_0_M4_test.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_scalatest_scalatest_2_9_1_2_0_M4_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/scala_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/scala_2_9_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/default-cbfbc5-build.iml" afterPath="$PROJECT_DIR$/.idea_modules/default-cbfbc5-build.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Fraction.scala" afterPath="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" afterPath="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" afterPath="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/FractionTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
     </list>
     <ignored path="sbtPractice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +49,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" line="25" class="IntOperationTest" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -101,19 +98,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fraction.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Fraction.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Fraction.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="63" selection-start="1534" selection-end="1534" vertical-scroll-proportion="1.1156387">
+            <state line="28" column="54" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PositionalNumInt.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Arithmetic.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Arithmetic.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="24" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntWrapper.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/IntWrapper.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="2" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PositionalNumInt.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="73" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.0">
+            <state line="9" column="24" selection-start="244" selection-end="244" vertical-scroll-proportion="0.20705521">
               <folding />
             </state>
           </provider>
@@ -122,16 +137,7 @@
       <file leaf-file-name="ImplicitConversion.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="33" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IntOperationTest.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/IntOperationTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+            <state line="20" column="56" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,7 +146,7 @@
       <file leaf-file-name="FractionTest.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/FractionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="67" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
+            <state line="36" column="61" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,12 +179,14 @@
         <option value="$PROJECT_DIR$/src/main/scala/Rational.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/IntOperation.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/PositionNum.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Ass1.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/FractionTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/IntOperationTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Arithmetic.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/IntWrapper.scala" />
       </list>
     </option>
   </component>
@@ -225,6 +233,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="sbtPractice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -317,14 +335,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sbtPractice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sbtPractice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -631,32 +653,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6805556" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2721585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36295503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6805556" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967984" sideWeight="0.6805556" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20784964" sideWeight="0.9732334" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27450982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20563847" sideWeight="0.72591007" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27408993" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.6805556" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.6805556" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -753,12 +775,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.9.1-sources.jar!/scala/collection/LinearSeqOptimized.scala">
+    <entry file="jar://$IVY_REPOSITORY$/org.scala-lang/scala-library/srcs/scala-library-2.9.1-sources.jar!/scala/collection/LinearSeqOptimized.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="0" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.7329377" />
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.9.1-sources.jar!/scala/collection/generic/Growable.scala">
+    <entry file="jar://$IVY_REPOSITORY$/org.scala-lang/scala-library/srcs/scala-library-2.9.1-sources.jar!/scala/collection/generic/Growable.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="0" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.6839546" />
       </provider>
@@ -773,37 +795,72 @@
         <state line="8" column="32" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
+    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/IntOperationTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+        <state line="168" column="98" selection-start="6205" selection-end="6205" vertical-scroll-proportion="0.5981595">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/FractionTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="67" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
+        <state line="36" column="61" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversion.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="73" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.0">
+        <state line="20" column="56" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Fraction.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="63" selection-start="1534" selection-end="1534" vertical-scroll-proportion="1.1156387">
+        <state line="28" column="54" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Arithmetic.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/IntWrapper.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="2" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/PositionalNumInt.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="244" selection-end="244" vertical-scroll-proportion="0.20705521">
           <folding />
         </state>
       </provider>

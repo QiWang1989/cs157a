@@ -5,7 +5,7 @@
  * Time: 5:55 PM
  * Basic numeric operations for positional number system
  */
-class PN(val pn:List[Int]) extends Ordered[PN]{
+class PN(val pn:List[Int]) extends Arithmetic[PN] with Ordered[PN]{
   import ImplicitConversion._
 
   def +(num2: PN): PN = this.+(num2, 10)
@@ -172,7 +172,8 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
 
   override def toString = pn.toString()
 
-  def equals(num2:PN):Boolean={
+  override def equals(other:Any):Boolean={
+    val num2 = other.asInstanceOf[PN]
     if (pn.length != num2.pn.length) return false
     (0 until pn.length) foreach { i=> if (pn(i) != num2.pn(i)) return false}
     true
@@ -186,6 +187,8 @@ class PN(val pn:List[Int]) extends Ordered[PN]{
       result = -1
     result
   }
+
+  def isZero:Boolean = this equals PN(List(0))
 }
 
 object PN{

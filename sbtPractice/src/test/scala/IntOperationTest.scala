@@ -154,6 +154,14 @@ class IntOperationTest extends FunSpec {
       assert(((num2 * List(8,7)) + List(6)) equals PN( List(7,8,9)))
     }
 
+    it("should divide two lists for base 10 causing negative in D4"){
+      val num1 = List(4, 1, 0, 0)
+      val num2 = List(5, 8, 8)
+      assert((num1 / (num2,10)) equals  PN( List(6)))
+      assert((num1 % (num2,10)) equals PN( List(5,7,2)))
+      assert(((num2 * List(6)) + List(5,7,2)) equals PN( List(4, 1, 0, 0)))
+    }
+
     it("should divide two lists for base 10"){
       val num1 = List(7, 8, 9)
       val num2 = List(9, 8)
