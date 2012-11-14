@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jline_jline_1.0">
+    <CLASSES>
+      <root url="jar://$IVY_REPOSITORY$/jline/jline/jars/jline-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$IVY_REPOSITORY$/jline/jline/docs/jline-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$IVY_REPOSITORY$/jline/jline/srcs/jline-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
