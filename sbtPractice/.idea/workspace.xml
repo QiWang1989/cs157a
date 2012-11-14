@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7814ffee-ca3d-499e-9a9b-7a26aebdec4b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Calculator.scala" afterPath="$PROJECT_DIR$/src/main/scala/Calculator.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Fraction.scala" afterPath="$PROJECT_DIR$/src/main/scala/Fraction.scala" />
-    </list>
+    <list default="true" id="7814ffee-ca3d-499e-9a9b-7a26aebdec4b" name="Default" comment="" />
     <ignored path="sbtPractice.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,8 +93,10 @@
       <file leaf-file-name="Calculator.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Calculator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="81" selection-start="408" selection-end="408" vertical-scroll-proportion="-0.9183359">
-              <folding />
+            <state line="84" column="45" selection-start="2379" selection-end="2379" vertical-scroll-proportion="1.5023112">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -886,8 +884,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Calculator.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="81" selection-start="408" selection-end="408" vertical-scroll-proportion="-0.9183359">
-          <folding />
+        <state line="84" column="45" selection-start="2379" selection-end="2379" vertical-scroll-proportion="1.5023112">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
