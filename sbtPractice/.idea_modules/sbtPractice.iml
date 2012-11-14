@@ -25,6 +25,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.scala-lang_scala-library_2.9.1" level="project" />
+    <orderEntry type="library" name="jline_jline_2.9" level="project" />
     <orderEntry type="library" scope="TEST" name="org.scalatest_scalatest_2.9.1_2.0.M4_test" level="project" />
     <orderEntry type="library" scope="TEST" name="junit_junit_4.10_test" level="project" />
     <orderEntry type="library" scope="TEST" name="org.hamcrest_hamcrest-core_1.1_test" level="project" />

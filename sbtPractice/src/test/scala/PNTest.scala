@@ -8,7 +8,7 @@ import org.scalatest.FunSpec
 import org.scalatest.junit.JUnitRunner
 
 @org.junit.runner.RunWith(classOf[JUnitRunner])
-class IntOperationTest extends FunSpec {
+class PNTest extends FunSpec {
   import  ImplicitConversion._
 
   describe("Integer add function") {
@@ -22,7 +22,6 @@ class IntOperationTest extends FunSpec {
     it("should add two lists with arbitraty length correctly for base 8") {
       val num1 = List(2,3,2,2)
       val num2 = List(2,7)
-      val result = num1+(num2,8)
       assert(num1 + (num2, 8) equals PN(List(2, 3, 5, 1)))
       assert(num2 + (num1, 8) equals PN(List(2, 3, 5, 1)))
     }
@@ -154,7 +153,7 @@ class IntOperationTest extends FunSpec {
       assert(((num2 * List(8,7)) + List(6)) equals PN( List(7,8,9)))
     }
 
-    it("should divide two lists for base 10 causing negative in D4"){
+    it("should divide two lists for base 10 causing negative in D4 (4100-588)"){
       val num1 = List(4, 1, 0, 0)
       val num2 = List(5, 8, 8)
       assert((num1 / (num2,10)) equals  PN( List(6)))

@@ -18,6 +18,8 @@ class IntWrapper(val value:Int) extends Arithmetic[IntWrapper]{
   }
 
   def isZero: Boolean = (value==0)
+
+  override def toString = value.toString
 }
 
 object IntWrapper{
