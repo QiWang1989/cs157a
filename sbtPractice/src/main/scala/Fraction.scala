@@ -7,23 +7,23 @@ import annotation.tailrec
  * Time: 6:32 PM
  * Fraction operations for both positional number system and native language number system
  */
-class Fraction[T<:Arithmetic[T]](val n: T, val d: T) extends Arithmetic[Fraction[T]]{
+class Fraction[T <: Arithmetic[T]](val n: T, val d: T) extends Arithmetic[Fraction[T]] {
   require(!(d isZero))
 
   def +(r: Fraction[T]): Fraction[T] = {
-    new Fraction(n * r.d + r.n * d, d * r.d).simplify
+    Fraction(n * r.d + r.n * d, d * r.d)
   }
 
   def -(r: Fraction[T]): Fraction[T] = {
-    new Fraction(n * r.d - r.n * d, d * r.d).simplify
+    Fraction(n * r.d - r.n * d, d * r.d)
   }
 
-  def *(r: Fraction[T]): Fraction[T]= {
-    new Fraction(n * r.n, d * r.d).simplify
+  def *(r: Fraction[T]): Fraction[T] = {
+    Fraction(n * r.n, d * r.d)
   }
 
   def /(r: Fraction[T]): Fraction[T] = {
-    new Fraction(n * r.d, d * r.n).simplify
+    Fraction(n * r.d, d * r.n)
   }
 
   def %(r: Fraction[T]): Fraction[T] = null
@@ -33,23 +33,22 @@ class Fraction[T<:Arithmetic[T]](val n: T, val d: T) extends Arithmetic[Fraction
     ((n equals f.n) && (d equals f.d))
   }
 
-  def simplify: Fraction[T] = {
-    val g = gcd(n, d)
-    new Fraction(n / g, d / g)
-  }
 
   override def toString = n + "/" + d
 
-  @tailrec
-  final def gcd(x: T, y: T): T = {
-    if (y isZero) x else gcd(y, x % y)
-  }
 
-  def isZero:Boolean = (n isZero)
+  def isZero: Boolean = (n isZero)
 }
 
 object Fraction {
-  def apply[U<:Arithmetic[U]](n: U, d: U) = {
-    new Fraction(n, d).simplify
+  def apply[T <: Arithmetic[T]](n: T, d: T) = {
+    def gcd(x: T, y: T): T = {
+      if (y isZero) x else gcd(y, x % y)
+    }
+
+    val g = gcd(n, d)
+    val (nn, dd) = (n / g, d / g)
+
+    new Fraction(nn, dd)
   }
 }

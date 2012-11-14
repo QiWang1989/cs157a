@@ -3,10 +3,9 @@
  * User: qiwan
  * Date: 11/7/12
  * Time: 8:47 PM
- * This calculator supports both PN and Int.
+ * This calculator supports both PN, Int, Fraction[PN], Fraction[Int].
  * {{{
  *   Example:
- *     Choose number system: pn
  *     Qi's Calc> 80 70 -
  *     80 70 -
  *     Qi's Calc> 67 +
@@ -17,10 +16,9 @@
  *     Qi's Calc>
  * }}}
  *
- * This calculator also supports input from a file
+ * This calculator also supports input from a file (file name must contains ".txt")
  * {{{
  *   Example:
- *     Choose number system: Int
  *     Qi's Calc> /tmp/cs157a.txt
  *     /tmp/cs157a.txt
  *     Qi's Calc> 90 +
@@ -40,14 +38,22 @@ case object Quit extends JLineEvent
 case object Print extends JLineEvent
 
 object Calculator extends App {
-  val numSys = readLine("Choose number system: ")
-  numSys.toLowerCase match {
-    case "pn" => new Calculator(x => ImplicitConversion.intToPN(x))
-    case "int" => new Calculator(x => IntWrapper(x))
+   val param = args.toList.map(_.toLowerCase)
+   param match {
+    // initialize PN calculator
+    case "-m"::"pn"::Nil => new Calculator(x => ImplicitConversion.intToPN(x(0)))
+    // initialize Int calculator
+    case "-m"::"int"::Nil => new Calculator(x => IntWrapper(x(0)))
+    // initialize Fraction[PN] calculator
+    case "-m"::"fraction[pn]"::Nil => new Calculator(x => Fraction(ImplicitConversion.intToPN(x(0)), ImplicitConversion.intToPN(x(1))))
+    // initialize Fraction[Int] calculator
+    case "-m"::"fraction[int]"::Nil => new Calculator(x => Fraction(IntWrapper(x(0)), IntWrapper(x(1))))
+    case _ => "wrong arguments"
   }
 }
 
-class Calculator[T <: Arithmetic[T]](val fac: Int => T) {
+class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
+
   val stack = mutable.Stack[T]()
 
   console {
@@ -55,11 +61,7 @@ class Calculator[T <: Arithmetic[T]](val fac: Int => T) {
       true
     case Line(s) =>
       val ls = s.split(" ").toList
-      ls.foreach (opMapping orElse numMapping)
-      false
-    case Print =>
-      if (!stack.isEmpty)
-        println(stack.pop)
+      ls.foreach (commandMapping orElse opMapping orElse numMapping)
       false
     case File(filename) =>
       for (line <- Source.fromFile(filename).getLines()) {
@@ -73,7 +75,6 @@ class Calculator[T <: Arithmetic[T]](val fac: Int => T) {
 
   def console(handler: JLineEvent => Boolean) {
     val consoleReader = new jline.console.ConsoleReader()
-//    consoleReader.setKeyMap(KeyMap.VI_INSERT)
     var finished = false
 
     while (!finished) {
@@ -82,11 +83,17 @@ class Calculator[T <: Arithmetic[T]](val fac: Int => T) {
       val line = consoleReader.readLine()
       finished = line match {
         case ("q" | null) => handler(Quit)
-        case "p" => handler(Print)
         case ln if ln.contains(".txt") => handler(File(ln))
         case ln: String => handler(Line(ln))
       }
     }
+  }
+
+  def commandMapping: PartialFunction[String, Unit] ={
+    case "p" =>
+      if (!stack.isEmpty)
+        println(stack.pop)
+      false
   }
 
   def opMapping: PartialFunction[String, Unit] = {
@@ -106,6 +113,9 @@ class Calculator[T <: Arithmetic[T]](val fac: Int => T) {
   }
 
   def numMapping: PartialFunction[String, Unit] = {
-    case x:String => stack.push(fac(x.toInt))
+    case x:String if x.contains("/") =>
+      val ls = x.split("/").toList map (_.toInt)
+      stack.push(fac(ls))
+    case x:String => stack.push(fac(List(x.toInt)))
   }
 }
