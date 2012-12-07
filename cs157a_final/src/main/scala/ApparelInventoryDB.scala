@@ -9,10 +9,26 @@ case class ApparelEntry(id:String, model:String, location:String) extends Entry
 
 trait ApparelInventoryDB extends InventoryDB{
   type  T = ApparelEntry
-  override def add(entry:T) = {
-    println("add an entry to Apparel Inventory Table")
+  // add an initial copy or one additional copy
+  // increase both copyInStock and totalCopy
+  def add(entry:T) = {
+
   }
-  override def delete(id:String) = {
-    println("delete an entry to Apparel Inventory Table")
+
+  // remove all copies of this book
+  def delete(id:String) = {
+
+  }
+
+  // add one additional copy
+  // increase both copyInStock and totalCopy
+  def addOneCopy(id:String) = {
+
+  }
+
+  //delete one copy from library
+  //decrease both copyInStock and totalCopy
+  def deleteOneCopy(id:String) = {
+
   }
 }

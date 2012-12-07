@@ -26,7 +26,7 @@ trait LibraryInventoryDB extends InventoryDB {
 
   // Add a book entry to library (either initial copy or additional copy)
   // increase both copyInStock and totalCopy
-  override def add(entry: T) = executeQuery("library") {
+  def add(entry: T) = executeQuery("library") {
     ifBookExist(entry.bookId) match {
       case Some(book) =>
         addOneCopyHelper(entry.bookId)
@@ -37,7 +37,7 @@ trait LibraryInventoryDB extends InventoryDB {
   }
 
   // remove all copies of this book
-  override def delete(id: String) = executeQuery("library") {
+  def delete(id: String) = executeQuery("library") {
     Library.book.deleteWhere(book => book.bookId === id) match {
       case 1 => println("Entry deleted successfully.")
       case 0 => println("Entry doesn't exist.")
@@ -47,7 +47,7 @@ trait LibraryInventoryDB extends InventoryDB {
 
   // add one additional copy
   // increase both copyInStock and totalCopy
-  override def addOneCopy(id: String) = executeQuery("library") {
+  def addOneCopy(id: String) = executeQuery("library") {
     addOneCopyHelper(id)
   }
 
@@ -62,7 +62,7 @@ trait LibraryInventoryDB extends InventoryDB {
 
   //delete one copy from library
   //decrease both copyInStock and totalCopy
-  override def deleteOneCopy(id: String) = executeQuery("library") {
+  def deleteOneCopy(id: String) = executeQuery("library") {
     val result = (from(Library.book)(bk => where(bk.bookId === id) select (bk)))
     result.isEmpty match {
       case false if result forall (_.copyInStock > 0) =>

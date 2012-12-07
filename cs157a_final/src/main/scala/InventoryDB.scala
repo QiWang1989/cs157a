@@ -32,21 +32,16 @@ trait InventoryDB {
   }
   // add an initial copy or one additional copy
   // increase both copyInStock and totalCopy
-  def add(entry:T) = {
-    println("add an entry to Inventory Table")
-  }
+  def add(entry:T)
+
   // remove all copies of this book
-  def delete(id:String) = {
-    println("delete an entry from Inventory Table")
-  }
+  def delete(id:String)
+
   // add one additional copy
   // increase both copyInStock and totalCopy
-  def addOneCopy(id:String) = {
-    println("add an entry to Inventory Table based on id")
-  }
+  def addOneCopy(id:String)
+
   //delete one copy from library
   //decrease both copyInStock and totalCopy
-  def deleteOneCopy(id:String) = {
-    println("delete one item of an entry from Inventory Table")
-  }
+  def deleteOneCopy(id:String)
 }
