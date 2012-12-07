@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="junit_junit_4.10_test">
+    <CLASSES>
+      <root url="jar://$IVY_REPOSITORY$/junit/junit/jars/junit-4.10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$IVY_REPOSITORY$/junit/junit/docs/junit-4.10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$IVY_REPOSITORY$/junit/junit/srcs/junit-4.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
