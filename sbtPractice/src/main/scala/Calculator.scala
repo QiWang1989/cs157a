@@ -32,24 +32,36 @@ import collection.mutable
 import io.Source
 
 sealed trait JLineEvent
+
 case class Line(value: String) extends JLineEvent
+
 case class File(filename: String) extends JLineEvent
+
 case object Quit extends JLineEvent
+
 case object Print extends JLineEvent
 
 object Calculator extends App {
-   val param = args.toList.map(_.toLowerCase)
-   param match {
-    // initialize PN calculator
-    case "-m"::"pn"::Nil => new Calculator(x => ImplicitConversion.intToPN(x(0)))
-    // initialize Int calculator
-    case "-m"::"int"::Nil => new Calculator(x => IntWrapper(x(0)))
-    // initialize Fraction[PN] calculator
-    case "-m"::"fraction[pn]"::Nil => new Calculator(x => Fraction(ImplicitConversion.intToPN(x(0)), ImplicitConversion.intToPN(x(1))))
-    // initialize Fraction[Int] calculator
-    case "-m"::"fraction[int]"::Nil => new Calculator(x => Fraction(IntWrapper(x(0)), IntWrapper(x(1))))
-    case _ => "wrong arguments"
-  }
+  //   val param = args.toList.map(_.toLowerCase)
+  //   param match {
+  //    // initialize PN calculator
+  //    case "-m"::"pn"::Nil => new Calculator(x => ImplicitConversion.intToPN(x(0)))
+  //    // initialize Int calculator
+  //    case "-m"::"int"::Nil => new Calculator(x => IntWrapper(x(0)))
+  //    // initialize Fraction[PN] calculator
+  //8/8    case "-m"::"fraction[pn]"::Nil => new Calculator(x => Fraction(ImplicitConversion.intToPN(x(0)), ImplicitConversion.intToPN(x(1))))
+  //    // initialize Fraction[Int] calculator
+  //    case "-m"::"fraction[int]"::Nil => new Calculator(x => Fraction(IntWrapper(x(0)), IntWrapper(x(1))))
+  //    case _ => "wrong arguments"
+  //  }
+  def mulTable(n: Int) = {
+    val result = 1 to n map {
+      i =>
+        (1 to n map (x => (i * x))) mkString (" \t")
+    }
+    result.mkString("\n")
+  } //> mulTable: (n: Int)String
+  print(mulTable(12))
 }
 
 class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
@@ -61,12 +73,12 @@ class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
       true
     case Line(s) =>
       val ls = s.split(" ").toList
-      ls.foreach (commandMapping orElse opMapping orElse numMapping)
+      ls.foreach(commandMapping orElse opMapping orElse numMapping)
       false
     case File(filename) =>
       for (line <- Source.fromFile(filename).getLines()) {
         val ls = line.split(" ").toList
-        ls.foreach (opMapping orElse numMapping)
+        ls.foreach(opMapping orElse numMapping)
       }
       false
     case _ =>
@@ -89,7 +101,7 @@ class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
     }
   }
 
-  def commandMapping: PartialFunction[String, Unit] ={
+  def commandMapping: PartialFunction[String, Unit] = {
     case "p" =>
       if (!stack.isEmpty)
         println(stack.pop)
@@ -101,7 +113,7 @@ class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
       stack.push(stack.pop + stack.pop)
     case "-" =>
       val (top, second) = (stack.pop, stack.pop)
-      stack.push( second - top)
+      stack.push(second - top)
     case "*" =>
       stack.push(stack.pop * stack.pop)
     case "/" =>
@@ -113,9 +125,9 @@ class Calculator[T <: Arithmetic[T]](val fac: List[Int] => T) {
   }
 
   def numMapping: PartialFunction[String, Unit] = {
-    case x:String if x.contains("/") =>
+    case x: String if x.contains("/") =>
       val ls = x.split("/").toList map (_.toInt)
       stack.push(fac(ls))
-    case x:String => stack.push(fac(List(x.toInt)))
+    case x: String => stack.push(fac(List(x.toInt)))
   }
 }

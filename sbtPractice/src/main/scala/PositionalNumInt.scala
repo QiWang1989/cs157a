@@ -76,7 +76,11 @@ class PN(val pn:List[Int]) extends Arithmetic[PN] with Ordered[PN]{
     if (result.head == 0) result.tail else result
   }
 
-  def /(num2: PN): PN = this./(num2, 10)
+  def /(num2: PN): PN = {
+    // if num2 is less than num1, than just result is (0, this)
+     this./(num2, 10)
+  }
+
   def /(num2: PN, b: Int = 10): PN = divMod(num2, b)._1
   def %(num2: PN): PN = this.%(num2, 10)
   def %(num2: PN, b: Int = 10): PN = divMod(num2, b)._2
