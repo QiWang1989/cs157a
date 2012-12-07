@@ -17,6 +17,6 @@ object Driver extends App{
       inventory.cmdLoop
     case "apparel" =>
       val inventory = new ApparelInventory
-      inventory.adminAddEntry(ApparelEntry("NO1","Shorts", "A&F"))
+//      inventory.adminAddEntry(ApparelEntry("NO1","Shorts", "A&F"))
   }
 }

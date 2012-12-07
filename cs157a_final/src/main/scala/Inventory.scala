@@ -8,10 +8,20 @@
 trait Inventory {
   self:InventoryDB =>
 
+  val genCmd:List[String] = List(
+    "0. Quit",
+    "101. List"
+  )
+
   def cmd:List[String]
+
+//  def availableInventory:List[String] = List(
+//    "1. Library",
+//    "2. Apparel")
 
   def cmdLoop = {
     var continue = true
+//    println("Choose inventory system:\n"+availableInventory.mkString("\n"))
 
     while(continue){
       println(cmd.mkString("\n"))
@@ -23,18 +33,10 @@ trait Inventory {
 
   def generalCmd:PartialFunction[Int, Boolean] = {
     case 0 => false
-    case _ => "Invalid command"; true
+    case 101 => list; true
+    case _ => println("Invalid command"); true
   }
 
 
   def cmdInterpretor:PartialFunction[Int, Boolean]
-
-  def adminAddEntry(entry: T) ={
-    add(entry)
-  }
-
-  // remove all copies of this book
-  def adminDeleteEntry(id: String) ={
-    delete(id)
-  }
 }

@@ -12,6 +12,7 @@ import org.squeryl.PrimitiveTypeMode._
 
 case class LibraryEntry(bookId: String, title: String, author: String, copyInStock: Int, totalCopy: Int) extends Entry {
   def this(bookId: String, title: String, author: String) = this(bookId, title, author, 1, 1)
+  override def toString = bookId+"\t"+title+"\t"+author+"\t"+copyInStock+"\t"+totalCopy
 }
 
 case class Borrow(bookId: String, user: String) extends Entry
@@ -126,6 +127,15 @@ trait LibraryInventoryDB extends InventoryDB {
     result.isEmpty match {
       case false => Some(result.head)
       case true => None
+    }
+  }
+
+  def list =  executeQuery("library"){
+    val result = from(Library.book)(bk=>select(bk))
+
+    result.isEmpty match{
+      case false => result.foreach(println(_))
+      case true => println("Empty inventory")
     }
   }
 }

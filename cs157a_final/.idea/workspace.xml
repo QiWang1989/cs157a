@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d54127c-d94c-4408-b408-46c47d41424a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/ApparelInventory.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/ApparelInventory.scala" afterPath="$PROJECT_DIR$/src/main/scala/ApparelInventory.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala" afterPath="$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Driver.scala" afterPath="$PROJECT_DIR$/src/main/scala/Driver.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Inventory.scala" afterPath="$PROJECT_DIR$/src/main/scala/Inventory.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/InventoryDB.scala" afterPath="$PROJECT_DIR$/src/main/scala/InventoryDB.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala" afterPath="$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala" afterPath="$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sbtPractice/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../sbtPractice/.idea/workspace.xml" />
     </list>
     <ignored path="cs157a_final.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,10 +67,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Driver.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Driver.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Driver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="52" selection-start="322" selection-end="322" vertical-scroll-proportion="0.221843">
+            <state line="9" column="39" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -81,7 +79,7 @@
       <file leaf-file-name="Inventory.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Inventory.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="51" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+            <state line="11" column="6" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,7 +88,7 @@
       <file leaf-file-name="LibraryInventory.scala.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="49" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+            <state line="16" column="12" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="docComment;class#LibraryInventory#0" expanded="false" />
               </folding>
@@ -98,19 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LibraryInventoryDB.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala">
+      <file leaf-file-name="ApparelInventory.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventory.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="104" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryDB.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/InventoryDB.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="91" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
+            <state line="20" column="93" selection-start="567" selection-end="567" vertical-scroll-proportion="0.34965035">
               <folding />
             </state>
           </provider>
@@ -119,7 +108,25 @@
       <file leaf-file-name="ApparelInventoryDB.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="76" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+            <state line="29" column="143" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LibraryInventoryDB.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="91" selection-start="447" selection-end="532" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryDB.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/InventoryDB.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="10" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,19 +157,19 @@
         <option value="$PROJECT_DIR$/src/main/scala/LibraryInventory.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/test/scala/LibraryInventoryDBTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Inventory.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/InventoryDB.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Driver.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ApparelInventory.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/InventoryDB.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Inventory.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="143" />
+    <option name="x" value="120" />
+    <option name="y" value="205" />
     <option name="width" value="1853" />
     <option name="height" value="1027" />
   </component>
@@ -510,7 +517,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="143" width="1853" height="1027" extended-state="0" />
+    <frame x="120" y="205" width="1853" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -604,46 +611,9 @@
         <state line="12" column="11" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventory.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Driver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="69" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Inventory.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="51" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="49" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="docComment;class#LibraryInventory#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="104" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/InventoryDB.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="91" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="76" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0">
+        <state line="9" column="39" selection-start="242" selection-end="242" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -655,9 +625,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Driver.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/InventoryDB.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="52" selection-start="322" selection-end="322" vertical-scroll-proportion="0.221843">
+        <state line="47" column="10" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Inventory.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventory.scala.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="12" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="docComment;class#LibraryInventory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/LibraryInventoryDB.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="91" selection-start="447" selection-end="532" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventoryDB.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="143" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ApparelInventory.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="93" selection-start="567" selection-end="567" vertical-scroll-proportion="0.34965035">
           <folding />
         </state>
       </provider>

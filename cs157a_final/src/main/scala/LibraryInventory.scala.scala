@@ -8,22 +8,28 @@
 
 class LibraryInventory extends Inventory with LibraryInventoryDB{
 
-  def cmd = List("Choose the number of operation you want:",
+  val cmd= List("Choose the number of operation you want:",
     "1. Add a book to library",
     "2. Delete a book from library",
     "3. Remove one copy of a book from library",
     "4. Borrow",
-    "5. Return",
-    "0. Quit"
-  )
+    "5. Return"
+  ):::genCmd
 
   def cmdInterpretor:PartialFunction[Int, Boolean] = {
     case 1 =>   //Add a book to library
-      adminAddEntry(new LibraryEntry("NO5","Life of Pi", "An Lee"))
+      println("Enter book id:")
+      val id = readLine()
+      println("Enter book title:")
+      val title = readLine()
+      println("Enter Author:")
+      val author = readLine()
+      add(new LibraryEntry(id,title, author))
+//      adminAddEntry(new LibraryEntry("NO5","Life of Pi", "An Lee"))
       true
     case 2 =>   //Delete a book from library
       println("Enter book id:")
-      adminDeleteEntry(readLine())
+      delete(readLine())
       true
     case 3 =>
       println("Enter book id:")

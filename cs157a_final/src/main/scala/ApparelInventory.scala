@@ -7,15 +7,7 @@
  */
 
 class ApparelInventory extends Inventory with ApparelInventoryDB{
-
-  def cmd = List("Choose the number of operation you want:",
-    "1. Add a book to library",
-    "2. Delete a book from library",
-    "3. Remove one copy of a book from library",
-    "4. Borrow",
-    "5. Return",
-    "0. Quit"
-  )
+  val cmd= genCmd
 
   def cmdInterpretor:PartialFunction[Int, Boolean] = {
     case 1 =>   //Add a book to library

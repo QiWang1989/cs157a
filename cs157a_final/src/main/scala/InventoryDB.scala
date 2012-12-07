@@ -44,4 +44,6 @@ trait InventoryDB {
   //delete one copy from library
   //decrease both copyInStock and totalCopy
   def deleteOneCopy(id:String)
+
+  def list
 }
