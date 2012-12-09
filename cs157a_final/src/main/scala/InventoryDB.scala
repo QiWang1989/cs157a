@@ -90,23 +90,21 @@ trait InventoryDB {
   def list(id:String) = executeQuery{
     val result = from(mainTable)(x=>select(x))
 
+    println("====================================================")
     if (id == "all"){
       result.isEmpty match{
         case false =>
-          println("====================================================")
           result.foreach(println(_))
-          println("====================================================")
         case true => println("Empty inventory")
       }
     }else{
       ifExist(id) match{
         case Some(entry) =>
-          println("====================================================")
           println(entry)
-          println("====================================================")
         case None => println("id doesn't exist")
       }
     }
+    println("====================================================")
   }
 
   def ifExist(id: String):Option[T] = {
