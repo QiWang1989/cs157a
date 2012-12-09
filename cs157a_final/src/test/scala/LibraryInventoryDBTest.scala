@@ -7,7 +7,6 @@
  */
 import org.scalatest.{Tag, FunSpec}
 import org.scalatest.junit.JUnitRunner
-import org.squeryl.SessionFactory
 import org.squeryl.PrimitiveTypeMode._
 
 @org.junit.runner.RunWith(classOf[JUnitRunner])
@@ -15,21 +14,47 @@ class LibraryInventoryDBTest extends FunSpec{
   describe("LibraryInventoryDB ") {
     val libraryInventoryDB = new LibraryInventoryDB{}
 
-    it("add(entry: T) should add one book to the library"){
-      libraryInventoryDB.add(new LibraryEntry("uniqueNo1","Life of Pi", "An Lee"))
+    it("add(entry:T, copy:Int=1) should add books to the library"){
+      libraryInventoryDB.add(new LibraryEntry("uniqueNo1","Life of Pi", "An Lee"),2)
+      libraryInventoryDB.add(new LibraryEntry("uniqueNo1","Life of Pi", "An Lee"),3)
 
-      libraryInventoryDB.executeQuery("library"){
-        assert(!(from(Library.book)(bk => where(bk.bookId === "uniqueNo1") select (bk))).isEmpty)
+      libraryInventoryDB.executeQuery{
+        val result = libraryInventoryDB.ifExist("uniqueNo1").get
+        assert(result.copyInStock == 5)
+        assert(result.totalCopy == 5)
       }
       libraryInventoryDB.delete("uniqueNo1")
     }
 
-    it("delete(id: String) should delete one book entry from the library"){
+    it("addCopy(id: String, copy:Int) should add copy to existing book the library"){
+      libraryInventoryDB.add(new LibraryEntry("uniqueNo7","Life of Pi", "An Lee"))
+      libraryInventoryDB.addCopy("uniqueNo7",9)
+
+      libraryInventoryDB.executeQuery{
+        val result = libraryInventoryDB.ifExist("uniqueNo7").get
+        assert(result.copyInStock == 10)
+        assert(result.totalCopy == 10)
+      }
+      libraryInventoryDB.delete("uniqueNo7")
+    }
+
+    it("delete(id: String) should delete book entry from the library"){
       libraryInventoryDB.add(new LibraryEntry("uniqueNo1","Life of Pi", "An Lee"))
       libraryInventoryDB.delete("uniqueNo1")
-      libraryInventoryDB.executeQuery("library"){
-        assert((from(Library.book)(bk => where(bk.bookId === "uniqueNo1") select (bk))).isEmpty)
+      libraryInventoryDB.executeQuery{
+        assert((from(Library.book)(bk => where(bk.id === "uniqueNo1") select (bk))).isEmpty)
       }
+    }
+
+    it("deleteCopy(id: String, copy:Int=1) should delete specified number of copy from the library"){
+      libraryInventoryDB.add(new LibraryEntry("uniqueNo8","Life of Pi", "An Lee"), 8)
+      libraryInventoryDB.deleteCopy("uniqueNo8",5)
+      libraryInventoryDB.executeQuery{
+        val result = libraryInventoryDB.ifExist("uniqueNo8").get
+        assert(result.copyInStock == 3)
+        assert(result.totalCopy == 3)
+      }
+      libraryInventoryDB.delete("uniqueNo8")
     }
 
     //test-only LibraryInventoryDBTest -- include(borrow)
@@ -37,10 +62,10 @@ class LibraryInventoryDBTest extends FunSpec{
       libraryInventoryDB.add(new LibraryEntry("uniqueNo2","Life of Pi", "An Lee"))
       libraryInventoryDB.borrowBook("uniqueNo2", "Qi")
 
-      libraryInventoryDB.executeQuery("library"){
-        from(Library.book)(bk => where(bk.bookId === "uniqueNo2") select (bk.copyInStock)) foreach(_==0)
-        assert(!(from(Library.borrow)(borrow => where(borrow.user === "Qi" and borrow.bookId === "uniqueNo2") select (borrow))).isEmpty)
-        Library.borrow.deleteWhere(borrow => borrow.user === "Qi" and borrow.bookId === "uniqueNo2")
+      libraryInventoryDB.executeQuery{
+        from(Library.book)(bk => where(bk.id === "uniqueNo2") select (bk.copyInStock)) foreach(_==0)
+        assert(!(from(Library.borrow)(borrow => where(borrow.user === "Qi" and borrow.id === "uniqueNo2") select (borrow))).isEmpty)
+        Library.borrow.deleteWhere(borrow => borrow.user === "Qi" and borrow.id === "uniqueNo2")
       }
       libraryInventoryDB.delete("uniqueNo2")
     }
@@ -50,34 +75,11 @@ class LibraryInventoryDBTest extends FunSpec{
       libraryInventoryDB.borrowBook("uniqueNo3","Qi")
       libraryInventoryDB.returnBook("uniqueNo3","Qi")
 
-      libraryInventoryDB.executeQuery("library"){
-        from(Library.book)(bk => where(bk.bookId === "uniqueNo3") select (bk.copyInStock)) foreach(copy=>assert(copy==1))
-        assert((from(Library.borrow)(borrow => where(borrow.bookId === "uniqueNo3" and borrow.user === "Qi") select (borrow))).isEmpty)
+      libraryInventoryDB.executeQuery{
+        from(Library.book)(bk => where(bk.id === "uniqueNo3") select (bk.copyInStock)) foreach(copy=>assert(copy==1))
+        assert((from(Library.borrow)(borrow => where(borrow.id === "uniqueNo3" and borrow.user === "Qi") select (borrow))).isEmpty)
       }
       libraryInventoryDB.delete("uniqueNo3")
-    }
-
-    it("addOneCopy(id:String) should add one copy of an existing book to the library"){
-      libraryInventoryDB.add(new LibraryEntry("uniqueNo4","Life of Pi", "An Lee"))
-      libraryInventoryDB.addOneCopy("uniqueNo4")
-
-      libraryInventoryDB.executeQuery("library"){
-        assert((libraryInventoryDB.ifBookExist("uniqueNo4").get).copyInStock == 2 )
-      }
-      libraryInventoryDB.delete("uniqueNo4")
-    }
-
-    it("deleteOneCopy(id: String) should delete one copy of an existing book from library book table"){
-      libraryInventoryDB.add(new LibraryEntry("uniqueNo5","Life of Pi", "An Lee"))
-      libraryInventoryDB.addOneCopy("uniqueNo5")
-      libraryInventoryDB.deleteOneCopy("uniqueNo5")
-
-      libraryInventoryDB.executeQuery("library"){
-        val book = libraryInventoryDB.ifBookExist("uniqueNo5").get
-        assert(book.copyInStock == 1 )
-        assert(book.totalCopy == 1 )
-      }
-      libraryInventoryDB.delete("uniqueNo5")
     }
   }
 }

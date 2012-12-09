@@ -7,15 +7,16 @@
  */
 
 
-import org.squeryl.SessionFactory
+import org.squeryl.{Table, SessionFactory}
 import org.squeryl.PrimitiveTypeMode._
 
-case class LibraryEntry(bookId: String, title: String, author: String, copyInStock: Int, totalCopy: Int) extends Entry {
-  def this(bookId: String, title: String, author: String) = this(bookId, title, author, 1, 1)
-  override def toString = bookId+"\t"+title+"\t"+author+"\t"+copyInStock+"\t"+totalCopy
+case class LibraryEntry(override val id: String, title: String, author: String, override val copyInStock: Int=1, override val totalCopy: Int=1)
+  extends Entry(id, copyInStock, totalCopy){
+  def setCopy(copy:Int):LibraryEntry = LibraryEntry(this.id, this.title, this.author, copy, copy)
+  override def toString = id+"\t"+title+"\t"+author+"\t"+copyInStock+"\t"+totalCopy
 }
 
-case class Borrow(bookId: String, user: String) extends Entry
+case class Borrow(id: String, user: String)
 
 object Library extends org.squeryl.Schema {
   val book = table[LibraryEntry]("book")
@@ -24,67 +25,14 @@ object Library extends org.squeryl.Schema {
 
 trait LibraryInventoryDB extends InventoryDB {
   type T = LibraryEntry
+  def mainTable = Library.book
+  def database="library"
 
-  // Add a book entry to library (either initial copy or additional copy)
-  // increase both copyInStock and totalCopy
-  def add(entry: T) = executeQuery("library") {
-    ifBookExist(entry.bookId) match {
-      case Some(book) =>
-        addOneCopyHelper(entry.bookId)
-        println("Add another copy to <" + entry.title + ">")
-      case None =>
-        println("Inserted entry:" + Library.book.insert(entry))
-    }
-  }
-
-  // remove all copies of this book
-  def delete(id: String) = executeQuery("library") {
-    Library.book.deleteWhere(book => book.bookId === id) match {
-      case 1 => println("Entry deleted successfully.")
-      case 0 => println("Entry doesn't exist.")
-      case _ => println("Error.")
-    }
-  }
-
-  // add one additional copy
-  // increase both copyInStock and totalCopy
-  def addOneCopy(id: String) = executeQuery("library") {
-    addOneCopyHelper(id)
-  }
-
-  // increase both copyInStock and totalCopy
-  def addOneCopyHelper(id: String) = {
-    update(Library.book)(bk =>
-      where(bk.bookId === id)
-        set(bk.copyInStock := bk.copyInStock.~ + 1,
-        bk.totalCopy := bk.totalCopy.~ + 1)
-    )
-  }
-
-  //delete one copy from library
-  //decrease both copyInStock and totalCopy
-  def deleteOneCopy(id: String) = executeQuery("library") {
-    val result = (from(Library.book)(bk => where(bk.bookId === id) select (bk)))
-    result.isEmpty match {
-      case false if result forall (_.copyInStock > 0) =>
-        update(Library.book)(bk =>
-          where(bk.bookId === id)
-            set(bk.copyInStock := bk.copyInStock.~ - 1,
-            bk.totalCopy := bk.totalCopy.~ - 1)
-        )
-        println("Delete one copy of <" + id + ">")
-      case false if result forall (_.copyInStock == 0) =>
-        println("Out of stock")
-      case true =>
-        println("Library doesn't have this book.")
-    }
-  }
-
-  def borrowBook(id: String, user: String) = executeQuery("library") {
-    ifBookExist(id) match {
+  def borrowBook(id: String, user: String) = executeQuery{
+    ifExist(id) match {
       case Some(book) if book.copyInStock > 0 =>
         update(Library.book)(bk =>
-          where(bk.bookId === id)
+          where(bk.id === id)
             set (bk.copyInStock := bk.copyInStock.~ - 1)
         )
         try {
@@ -99,43 +47,21 @@ trait LibraryInventoryDB extends InventoryDB {
     }
   }
 
-  def returnBook(id: String, user: String) = executeQuery("library") {
-    ifBookExist(id) match {
+  def returnBook(id: String, user: String) = executeQuery{
+    ifExist(id) match {
       case Some(book) =>
         update(Library.book)(bk =>
-          where(bk.bookId === id)
+          where(bk.id === id)
             set (bk.copyInStock := bk.copyInStock.~ + 1)
         )
 
-        Library.borrow.deleteWhere(borrow => borrow.user === user and borrow.bookId === id) match {
+        Library.borrow.deleteWhere(borrow => borrow.user === user and borrow.id === id) match {
           case 1 => println("Entry deleted successfully.")
           case 0 => println("Entry doesn't exist.")
           case _ => println("Error.")
         }
       case None =>
         println("This book is not own by the library")
-    }
-  }
-
-  // if book exists in Book table, then return that row; otherwise return None
-  def ifBookExist(id: String): Option[LibraryEntry] = {
-    var result: org.squeryl.Query[LibraryEntry] = null
-    inTransaction {
-      result = from(Library.book)(bk => where(bk.bookId === id) select (bk))
-    }
-
-    result.isEmpty match {
-      case false => Some(result.head)
-      case true => None
-    }
-  }
-
-  def list =  executeQuery("library"){
-    val result = from(Library.book)(bk=>select(bk))
-
-    result.isEmpty match{
-      case false => result.foreach(println(_))
-      case true => println("Empty inventory")
     }
   }
 }
